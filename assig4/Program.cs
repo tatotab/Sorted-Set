@@ -79,7 +79,47 @@ namespace assig4
             Console.WriteLine($"\nFiltered list Contains 8: {filtered.Contains(8)}");
             Console.WriteLine($"Filtered list Contains 14: {filtered.Contains(14)}");
 
-            
+            /*now i need to test Sorted Set functions 
+            1.constructor
+            2.overriden Add
+            3.overriden Remove
+            4.modified operator
+            */
+
+            Console.WriteLine("\nCreating Sorted list using set2: ");
+            var mySortedSet = new COMPE361.SortedSet<int>(set2);
+            foreach(var item in mySortedSet)
+                Console.Write(item + ",  ");
+            Console.WriteLine("\n\nCreating SecondSorted list using set1: ");
+            var mySortedSet2 = new COMPE361.SortedSet<int>(set1);
+            foreach (var item in mySortedSet2)
+                Console.Write(item + ",  ");
+            //test Add and Remove
+            Console.WriteLine($"\n\nsorted set 1 contains 6: {mySortedSet.Contains(6)}");
+            Console.WriteLine($"sorted set 1 contains 37: {mySortedSet.Contains(37)}");
+            Console.WriteLine($"sorted set 1 added 6: {mySortedSet.Add(6)}");
+            Console.WriteLine($"sorted set 1 added 37: {mySortedSet.Add(37)}");
+            Console.Write("Contents Now: ");
+            foreach (var item in mySortedSet)
+                Console.Write(item + ",  ");
+            Console.WriteLine($"\n\nsorted set 1 contains 99: {mySortedSet.Contains(99)}");
+            Console.WriteLine($"sorted set 1 contains 37: {mySortedSet.Contains(37)}");
+            Console.WriteLine($"sorted set 1 removed 99: {mySortedSet.Remove(99)}");
+            Console.WriteLine($"sorted set 1 removed 37: {mySortedSet.Remove(37)}");
+            Console.Write("Contents Now: ");
+            foreach (var item in mySortedSet)
+                Console.Write(item + ",  ");
+
+            //testing union with operator overloading
+            Console.Write("\n\nUnion of Sorted sets : ");
+            var sortedUnionedSet = mySortedSet + mySortedSet2;
+            foreach (var item in sortedUnionedSet)
+            {
+                Console.Write(item + "  ");
+            }
+
+
+
         }
     }
 }
